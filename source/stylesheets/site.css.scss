@@ -43,8 +43,14 @@ h1 {
 }
 
 .welcome {
+  max-width: 1120px;
+  margin: auto;
   -webkit-animation-name: welcome;
   -webkit-animation-duration: .9s;
+
+  img {
+    max-width: 1120px;
+  }
 }
 
 @-webkit-keyframes welcome {
