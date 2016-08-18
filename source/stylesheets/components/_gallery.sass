@@ -1,0 +1,13 @@
+.gallery
+  padding: $base-spacing
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.gallery-image
+  max-width: 100%
+  margin-bottom: $base-spacing
+  @include animation(move-in .5s ease)
+
+  &:last-child
+    margin-bottom: 0

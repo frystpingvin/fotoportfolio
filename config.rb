@@ -20,7 +20,7 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+
 end
 
 ###
@@ -42,3 +42,9 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+activate :external_pipeline,
+  name: :gulp,
+  command: build? ? 'npm run production' : 'npm run gulp',
+  source: ".tmp",
+  latency: 1
