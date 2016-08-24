@@ -1,11 +1,41 @@
-@-webkit-keyframes move-in
++keyframes(move-in)
   from
-    @include transform(translateY(500px) scale(0.1))
+    +transform(translateY(500px) scale(0.1))
     opacity: 0
 
   50%
-    @include transform(translateY(-50px) scale(1.05))
-
+    +transform(translateY(-50px) scale(1.05))
     opacity: 1
+
   to
-    @include transform(translateY(0) scale(1))
+    +transform(translateY(0) scale(1))
+
+/* Generated with Bounce.js. Edit at http://goo.gl/xUqnPY */
++keyframes(open-about)
+  0%
+    +transform(translateX(100%))
+  4.1%
+    +transform(translateX(42%))
+  8.11%
+    +transform(translateX(11%))
+  12.11%
+    +transform(translateX(38px))
+  16.12%
+    +transform(translateX(8px))
+  27.23%
+    +transform(translateX(51px))
+  38.34%
+    +transform(translateX(62px))
+  60.56%
+    +transform(translateX(59px))
+  82.78%
+    +transform(translateX(61px))
+  100%
+    +transform(translateX(60px))
+
++keyframes(close-about)
+  from
+    +transform(translateX(60px))
+
+  to
+    +transform(translateX(100%))

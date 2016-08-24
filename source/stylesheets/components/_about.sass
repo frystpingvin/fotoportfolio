@@ -1,14 +1,40 @@
-.button-about
-  position: absolute
-  left: -60px
-  top: 30px
+.about-button-container
+  float: left
+  width: 60px
+  height: 100%
+  background-color: white
+
+.about-button
+  position: relative
+  top: 60px
   transform: rotate(90deg)
 
 .about
-  position: absolute
-  top: 0
-  left: 80px
-  bottom: 0
-  right: 0
-  background-color: grey
+  position: fixed
+  right: 60px
+  width: 100%
+  height: 100%
   transform: translateX(100%)
+
+  &.do-open-about
+    +animation(open-about 500ms linear both)
+
+  &.do-close-about
+    +animation(close-about 50ms linear both)
+
+  .about-content
+    position: relative
+    float: left
+    width: calc(100% - 60px)
+    height: 100%
+    padding: $base-spacing
+
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      width: calc(100% + 60px)
+      height: 100%
+      z-index: -1
+      background-color: $bianca

@@ -5,11 +5,13 @@ $(document).ready(function() {
 
   aboutButton.click(function () {
     if (!aboutOpen) {
-      aboutEl.css('transform', 'translateX(0)');
+      aboutEl.addClass('do-open-about');
+      aboutEl.removeClass('do-close-about');
       aboutButton.text('Close');
       aboutOpen = true;
     } else {
-      aboutEl.css('transform', 'translateX(100%)');
+      aboutEl.removeClass('do-open-about');
+      aboutEl.addClass('do-close-about');
       aboutButton.text('About');
       aboutOpen = false;
     }
