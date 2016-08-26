@@ -68,9 +68,9 @@
         return new Date(b.date * 1000) - new Date(a.date * 1000);
       });
 
-      // $.each(photoArray, function(i, photo) {
-      //   $('.do-gallery').append('<img class="gallery-image" src=' + photo.url + '>');
-      // });
+      $.each(photoArray, function(i, photo) {
+        $('.do-gallery').append('<img class="gallery-image" src=' + photo.url + '>');
+      });
 
       loading(false);
       pagesLoaded++;
