@@ -6,14 +6,15 @@
       instagramApi  = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=41682531.1677ed0.0345e6d7b61142afab3a948804bafcdc&count=' + photosPerPage + '&callback=?';
 
   var loading = function(boolean) {
+    var loadingEl = $('.do-loading');
+
     if (boolean) {
       loadingImages = true;
-      $('.do-loading').show();
+      loadingEl.show();
     } else {
       loadingImages = false;
-      $('.do-loading').hide();
+      loadingEl.hide();
     }
-    console.log('Loading: ' + boolean);
   }
 
   var getPhotos = function() {
@@ -24,16 +25,12 @@
         flickrPhotos,
         instagramPhotos;
 
-    console.log('insta api url: ' + instagramApi);
-
     $.when(
       $.getJSON(flickrApi, function(data) {
         flickrPhotos = data;
-        console.log(data);
       }),
       $.getJSON(instagramApi, function(data) {
         instagramPhotos = data;
-        console.log(data);
       })
     ).then(function() {
 

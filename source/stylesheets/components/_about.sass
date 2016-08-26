@@ -1,12 +1,12 @@
 .about-button-container
+  position: relative
   float: left
   width: 60px
   height: 100%
-  background-color: white
+  +transition(background-color 50ms linear)
 
 .about-button
-  position: relative
-  top: 60px
+  margin-top: 60px
   transform: rotate(90deg)
 
 .about
@@ -15,9 +15,13 @@
   width: 100%
   height: 100%
   transform: translateX(100%)
+  z-index: $overlay-z-index
 
   &.do-open-about
     +animation(open-about 500ms linear both)
+
+    .about-button-container
+      background-color: white
 
   &.do-close-about
     +animation(close-about 50ms linear both)
@@ -28,6 +32,7 @@
     width: calc(100% - 60px)
     height: 100%
     padding: $base-spacing
+    font-size: $large-font-size
 
     &:before
       content: " "

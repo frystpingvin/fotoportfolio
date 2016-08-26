@@ -3,7 +3,13 @@ button,
   +appearance(none)
   background: none
   border: none
+  padding: $base-spacing $small-spacing
   font-family: $sans-serif
+  +transition(all $base-duration $base-timing)
+
+  &:hover
+    color: $hover-color
+    cursor: pointer
 
   &:focus
     outline: none
