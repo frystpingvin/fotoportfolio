@@ -2,22 +2,24 @@
 
   var pagesLoaded   = 0,
       loadingImages = true,
-      instagramApi  = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=41682531.1677ed0.0345e6d7b61142afab3a948804bafcdc&count=4&callback=?';
+      photosPerPage = 3,
+      instagramApi  = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=41682531.1677ed0.0345e6d7b61142afab3a948804bafcdc&count=' + photosPerPage + '&callback=?';
 
   var loading = function(boolean) {
     if (boolean) {
       loadingImages = true;
-      $('.loading').show();
+      $('.do-loading').show();
     } else {
       loadingImages = false;
-      $('loading').hide();
+      $('.do-loading').hide();
     }
+    console.log('Loading: ' + boolean);
   }
 
   var getPhotos = function() {
     loading(true);
 
-    var flickrApi     = 'https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=d608c9f0fefb8bda99a8ca1d3d8726b1&user_id=61937047@N07&&extras=date_upload&per_page=4&page=' + (pagesLoaded + 1) + '&format=json&jsoncallback=?',
+    var flickrApi     = 'https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=d608c9f0fefb8bda99a8ca1d3d8726b1&user_id=61937047@N07&&extras=date_upload&per_page=' + photosPerPage + '&page=' + (pagesLoaded + 1) + '&format=json&jsoncallback=?',
         photoArray    = [],
         flickrPhotos,
         instagramPhotos;
